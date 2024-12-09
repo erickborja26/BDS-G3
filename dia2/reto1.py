@@ -1,5 +1,7 @@
-conversion1= input("Ingrese la conversión actual de sol a dolar: ")
-conversion2= input("Ingrese la conversión actual de dolar a sol: ")
+import os
+from time import sleep
+conversion1= 3.7
+conversion2= 3.8
 bandera = "si"
 while(bandera=="si"):
     print("=======CONVERSOR (SOLES|DOLARES)=======")
@@ -9,10 +11,13 @@ while(bandera=="si"):
                   2) DE DOLARES A SOLES
                   ESCOJA UNA OPCION: 
                   """))
+    os.system("clear")
     if(opcion==1):
         soles= float(input("Ingrese los soles a convertir: "))
-        print(f"{soles} soles son {soles*float(conversion1)} dolares")
+        print(f"{soles} soles son {soles/conversion2} dolares")
     elif(opcion==2):
         dolares= float(input("Ingrese los dolares a convertir: "))
-        print(f"{dolares} dolares son {dolares*(1/float(conversion2))} soles")
+        print(f"{dolares} dolares son {dolares*conversion1} soles")
     bandera= input("¿Desea continuar? ...(si|no): ")
+    sleep(2)
+    os.system("clear")
