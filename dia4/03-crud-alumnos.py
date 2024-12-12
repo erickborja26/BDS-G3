@@ -9,6 +9,7 @@ CRUD
  - UPDATE
  - DELETE
 """
+cargar_alumnos('alumnos.txt')
 
 opcion= 0
 
