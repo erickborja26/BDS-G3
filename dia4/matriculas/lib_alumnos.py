@@ -18,6 +18,14 @@ def cargar_alumnos(file_name):
         }
         dic_alumnos.update(dic_nuevo_alumno)
 
+def grabar_alumnos(file_name):
+    str_alumnos= ""
+    for clave,valor in dic_alumnos.items():
+        str_alumnos += clave +","+ valor['nombre'] +"," + valor['email'] +"\n"
+    file= open(file_name, 'w')
+    file.write(str_alumnos)
+    file.close
+
 def mostrar_mensaje(mensaje):
     print("*"*ANCHO)
     print(" "*10 + mensaje)

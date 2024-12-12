@@ -1,3 +1,2 @@
 100,cesar,cesar@gmail.com
 200,ana,anar@gmail.com
-400,erick,erick@gmail.com
