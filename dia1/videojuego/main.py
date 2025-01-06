@@ -86,6 +86,13 @@ class MensajeJuego:
         time.sleep(5)
         sys.exit()
 
+    def mostrar_puntaje(self, puntos):
+        fuente_puntos = pygame.font.SysFont('Consolas', 20)
+        texto = fuente_puntos.render(str(puntos).zfill(5),True, self.color)
+        texto_rect = texto.get_rect()
+        texto_rect.topleft = [0, 0]
+        pantalla.blit(texto, texto_rect)
+    
 #creamos un reloj
 reloj = pygame.time.Clock()
 
@@ -94,6 +101,8 @@ bolita = Bolita()
 jugador = Paleta()
 muro = Muro(100)
 mensajes = MensajeJuego()
+
+puntos= 0
 
 pantalla = pygame.display.set_mode((ANCHO,ALTO))
 pygame.display.set_caption("MI PRIMER VIDEOJUEGO")
@@ -126,6 +135,7 @@ while True:
     lista =  pygame.sprite.spritecollide(bolita, muro, True)
     if lista:
         pygame.mixer.Sound.play(sonido_colision_muro)
+        puntos+=10
     
     ############### EVALUAMOS ACCIONES ###############################
     if bolita.rect.bottom > ALTO:
@@ -134,6 +144,8 @@ while True:
     ############### DIBUJAMOS LOS OBJETOS EN LA PANTALLA ####################
     #pintamos el fondo de la pantalla
     pantalla.fill(color_fondo)
+    #mostramos puntos
+    mensajes.mostrar_puntaje(puntos)
     #dibujamos la bolita enn la pantalla
     pantalla.blit(bolita.image, bolita.rect)
     #dibujamos el jugador en la pantalla
