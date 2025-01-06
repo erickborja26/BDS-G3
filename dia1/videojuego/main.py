@@ -132,10 +132,22 @@ while True:
         pygame.mixer.Sound.play(sonido_colision_paleta)
         
     #colision de bolita con el muro de ladrillo
-    lista =  pygame.sprite.spritecollide(bolita, muro, True)
-    if lista:
+    #lista =  pygame.sprite.spritecollide(bolita, muro, True)
+    #if lista:
+    #    pygame.mixer.Sound.play(sonido_colision_muro)
+    #    puntos+=10
+    #Creamos una colision mas dificil con el muro
+    lista =pygame.sprite.spritecollide(bolita, muro, False)
+    if lista :
+        ladrillo = lista[0]
+        cx = bolita.rect.centerx
+        if cx < ladrillo.rect.left or cx > ladrillo.rect.right:
+            bolita.speed[0] = -bolita.speed[0]
+        else:
+            bolita.speed[1] = -bolita.speed[1]
+        muro.remove(ladrillo)
         pygame.mixer.Sound.play(sonido_colision_muro)
-        puntos+=10
+        puntos +=10
     
     ############### EVALUAMOS ACCIONES ###############################
     if bolita.rect.bottom > ALTO:
