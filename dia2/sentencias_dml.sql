@@ -1,4 +1,4 @@
--- Active: 1736489899517@@127.0.0.1@3306@datag3
+-- Active: 1736532502233@@127.0.0.1@3306@datag3
 -- sentencias DML
 -- INSERTAR DATOS (INSERT)
 INSERT INTO  alumno(nro_documento,nombre) VALUES('100','cesar');

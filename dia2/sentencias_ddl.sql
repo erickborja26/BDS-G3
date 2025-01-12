@@ -1,4 +1,4 @@
--- Active: 1736489899517@@127.0.0.1@3306@datag3
+-- Active: 1736532502233@@127.0.0.1@3306@datag3
 CREATE TABLE alumno(
     id int NOT NULL PRIMARY KEY AUTO_INCREMENT,
     nro_documento VARCHAR(10) NOT NULL,

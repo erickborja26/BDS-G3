@@ -1,4 +1,4 @@
--- Active: 1736493026762@@127.0.0.1@3306@datag3
+-- Active: 1736532502233@@127.0.0.1@3306@datag3
 
 -- SELECT
 SELECT * from empleado;

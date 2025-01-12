@@ -1,3 +1,4 @@
+-- Active: 1736532502233@@127.0.0.1@3306@datag3
 create table if not exists empleado (
 	id int NOT NULL PRIMARY KEY AUTO_INCREMENT,
 	nombre VARCHAR(50),
