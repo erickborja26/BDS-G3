@@ -25,11 +25,6 @@ def task_extract_neoauto():
             nombre = auto.find('h2', class_='c-results__header-title').get_text()
             url = 'https://neoauto.com/' + auto.find('a', class_='c-results__link')['href']
             precio = auto.find('div',class_='c-results-mount__price').get_text()
-            
-            print(f'Nombre: {nombre}')
-            print(f'URL: {url}')
-            print(f'Precio: {precio}')
-            print('---')
             autos.append({"nombre": nombre, "url": url,"precio":precio})
         
             
